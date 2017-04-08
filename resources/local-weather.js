@@ -1,8 +1,6 @@
 $( document ).ready( function() {
 	var latitude;
 	var longitude;
-	var city;
-	var country;
 
 	$.ajax({
 		dataType: "json",
@@ -18,7 +16,7 @@ $( document ).ready( function() {
 				url:"http://api.openweathermap.org/data/2.5/weather?lat="
 				+latitude+"&lon="+ longitude + "&appid=fe99cd3d99dc8b934cb6774f84389ab5",				
 				success: function( response ) {
-					console.log( response );
+					putWeatherData( response );
 				}	
 			});
 		},
@@ -28,4 +26,10 @@ $( document ).ready( function() {
 function putLocation( data ) {
 	$(".city").html( data.city );
 	$(".country").html( data.country );
+}
+
+function putWeatherData( data )
+{
+	tempCelcius = data.main.temp - 273.15;
+	$(".temperature").html( tempCelcius + " &#8451;" );
 }
