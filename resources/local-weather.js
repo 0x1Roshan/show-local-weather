@@ -16,6 +16,7 @@ $( document ).ready( function() {
 				url:"http://api.openweathermap.org/data/2.5/weather?lat="
 				+latitude+"&lon="+ longitude + "&appid=fe99cd3d99dc8b934cb6774f84389ab5",				
 				success: function( response ) {
+					console.log( response ); 
 					putWeatherData( response );
 				}	
 			});
@@ -31,5 +32,7 @@ function putLocation( data ) {
 function putWeatherData( data )
 {
 	tempCelcius = data.main.temp - 273.15;
+
 	$(".temperature").html( tempCelcius + " &#8451;" );
+	$(".description").html( data.weather[0].description );
 }
