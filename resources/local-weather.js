@@ -19,7 +19,7 @@ $( document ).ready( function() {
 				+latitude+"&lon="+ longitude + "&appid=fe99cd3d99dc8b934cb6774f84389ab5",				
 				success: function( response ) {
 					putWeatherData( response );
-				}	
+				}
 			});
 		},
 	});
