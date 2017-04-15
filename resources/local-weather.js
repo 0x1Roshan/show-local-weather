@@ -36,7 +36,7 @@ function putWeatherData( data )
 
 	currentTemp = tempCelcius;
 
-	$(".temperature").html( tempCelcius );
+	$(".temperature").html( tempCelcius + " &#8451;" );
 	$(".description").html( data.weather[0].description );
 }
 
@@ -47,10 +47,10 @@ $('input[type=radio][name=temp_metric]').change( function() {
 
 	if ( metric == "f") {
 		currentTemp = Math.round(( currentTemp * 9 / 5) + 32);
+		$( ".temperature").html( currentTemp + " &#8457;");
 		
 	} else if ( metric == "c" ) {
 		currentTemp = Math.round((currentTemp - 32 ) * 5 / 9);
+		$( ".temperature").html( currentTemp + " &#8451;");
 	}
-
-	$( ".temperature").html( currentTemp );
 });
