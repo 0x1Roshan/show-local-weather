@@ -1,3 +1,5 @@
+var currentTemp = 0;
+
 $( document ).ready( function() {
 	var latitude;
 	var longitude;
@@ -16,7 +18,6 @@ $( document ).ready( function() {
 				url:"http://api.openweathermap.org/data/2.5/weather?lat="
 				+latitude+"&lon="+ longitude + "&appid=fe99cd3d99dc8b934cb6774f84389ab5",				
 				success: function( response ) {
-					console.log( response ); 
 					putWeatherData( response );
 				}	
 			});
@@ -33,6 +34,23 @@ function putWeatherData( data )
 {
 	tempCelcius = data.main.temp - 273.15;
 
-	$(".temperature").html( tempCelcius + " &#8451;" );
+	currentTemp = tempCelcius;
+
+	$(".temperature").html( tempCelcius );
 	$(".description").html( data.weather[0].description );
 }
+
+$('input[type=radio][name=temp_metric]').change( function() {
+	
+	var metric = this.value;
+
+
+	if ( metric == "f") {
+		currentTemp = Math.round(( currentTemp * 9 / 5) + 32);
+		
+	} else if ( metric == "c" ) {
+		currentTemp = Math.round((currentTemp - 32 ) * 5 / 9);
+	}
+
+	$( ".temperature").html( currentTemp );
+});
