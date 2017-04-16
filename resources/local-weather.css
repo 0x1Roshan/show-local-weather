@@ -1,7 +1,6 @@
 body {
-    background-color:silver;
-    color:purple;
-    font-size: 20px;
+    background-size: cover;
+    font-size: 25px;
 	font-family:"Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
 	text-align: center;
 }
@@ -10,5 +9,17 @@ body {
 	background-color: purple;
 	color:white;
 	padding:5px;
-	box-shadow: 2px 2px 2px black;
+	box-shadow: 2px 2px 2px grey;
+}
+
+.temperature {
+	font-size:30px;
+	color:black;
+}
+
+.weather-box {
+	margin-top:20px;
+	background-color:#42a5f5;
+	color:black;
+	box-shadow: 10px 10px 10px grey;
 }
