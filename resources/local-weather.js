@@ -26,24 +26,28 @@ $( document ).ready( function() {
 });
 
 function putLocation( data ) {
-	$(".city").html( data.city );
-	$(".country").html( data.country );
+	$(".location").html( data.city + " , " + data.country );
 }
 
 function putWeatherData( data )
 {
+	var icon = "";
+
 	tempCelcius = data.main.temp - 273.15;
 
 	currentTemp = tempCelcius;
 
 	$(".temperature").html( tempCelcius + " &#8451;" );
 	$(".description").html( data.weather[0].description );
+
+	icon = data.weather[0].icon;
+
+	$("#weatherIcon").attr("src", "http://openweathermap.org/img/w/"+ icon +".png");
 }
 
 $('input[type=radio][name=temp_metric]').change( function() {
 	
 	var metric = this.value;
-
 
 	if ( metric == "f") {
 		currentTemp = Math.round(( currentTemp * 9 / 5) + 32);

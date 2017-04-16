@@ -1,0 +1,14 @@
+body {
+    background-color:silver;
+    color:purple;
+    font-size: 20px;
+	font-family:"Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+	text-align: center;
+}
+
+.app-name {
+	background-color: purple;
+	color:white;
+	padding:5px;
+	box-shadow: 2px 2px 2px black;
+}

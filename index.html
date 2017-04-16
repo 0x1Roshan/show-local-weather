@@ -2,40 +2,41 @@
 	<head>
 		<title>Local Weather App</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="resources/local-weather.css" />
 	</head>
 	<body>
 		<div class = "container">
-			<h2 style="text-align:center;">Local Weather App</h2>
-			<div class="jumbotron">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<h4 class="city"></h4>
-								<h5 class="country"></h5>
-								<hr>
-								<h4 class="description"></h4>
+			<div class="app-name">
+				<h2>Local Weather App</h2>
+			</div>	
+			<div class="row">
+				<div class="col-md-12">
+					<div>
+						<div class="panel-body">
+							<p class="location"></p>
+							<p class="description"></p>
+							<div>
+								<img id="weatherIcon"/> 
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6">
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<h4>Temperature</h4>
-								<h5 class="temperature"></h5>
-								<form>
-									<div class="radio">
-										<label>
-											<input type="radio" name="temp_metric" value="c" checked="checked">Celcius
-										</label>
-									</div>
-									<div class="radio">
-										<label>
-											<input type="radio" name="temp_metric" value="f">Farenhite
-										</label>
-									</div>
-								</form>
-							</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div>
+						<div class="panel-body">
+							<h5 class="temperature"></h5>
+							<form>
+								<div class="radio">
+									<label>
+										<input type="radio" name="temp_metric" value="c" checked="checked">Celsius
+									</label>
+									<label>
+										<input type="radio" name="temp_metric" value="f">Fahrenheit
+									</label>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
